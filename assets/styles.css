@@ -467,9 +467,6 @@ svg { flex: none; }
 .service .ic { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: var(--r); background: var(--bg-alt); border: 1px solid var(--line); }
 .service b { display: block; margin-bottom: 4px; font-weight: 600; font-size: 16px; line-height: 1.4; }
 .service span { font-size: 14.5px; line-height: 1.5; color: var(--muted); }
-.service li.honest .ic { background: var(--tint); border-color: #FFD9BF; }
-.service li.honest b { color: var(--accent-ink); }
-
 .fleet-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 32px; margin-bottom: 24px; }
 .fleet-head p { max-width: 520px; font-size: 15px; line-height: 1.5; color: var(--muted); }
 .fleet { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; }
