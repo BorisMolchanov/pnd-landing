@@ -3,6 +3,14 @@
    Палитра 60/30/10: белый и светло-серый фон, графит, сигнальный акцент.
    ========================================================================== */
 
+/* Шрифты лежат локально в assets/fonts (Fontsource, лицензия OFL): страница не ходит к Google */
+@font-face { font-family: 'Inter'; font-style: normal; font-display: swap; font-weight: 100 900; src: url('fonts/inter-cyrillic-wght-normal.woff2') format('woff2-variations'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: 'Inter'; font-style: normal; font-display: swap; font-weight: 100 900; src: url('fonts/inter-latin-wght-normal.woff2') format('woff2-variations'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Inter Tight'; font-style: normal; font-display: swap; font-weight: 100 900; src: url('fonts/inter-tight-cyrillic-wght-normal.woff2') format('woff2-variations'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: 'Inter Tight'; font-style: normal; font-display: swap; font-weight: 100 900; src: url('fonts/inter-tight-latin-wght-normal.woff2') format('woff2-variations'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-display: swap; font-weight: 100 800; src: url('fonts/jetbrains-mono-cyrillic-wght-normal.woff2') format('woff2-variations'); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-display: swap; font-weight: 100 800; src: url('fonts/jetbrains-mono-latin-wght-normal.woff2') format('woff2-variations'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
 :root {
   --bg: #FFFFFF;
   --bg-alt: #F8F9FA;
@@ -55,7 +63,7 @@ p { margin: 0; }
 svg { flex: none; }
 [hidden] { display: none !important; }
 :focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
-.hero :focus-visible, .footer :focus-visible, .kp :focus-visible, .calc :focus-visible, .mobile-bar :focus-visible { outline-color: var(--accent); }
+.hero :focus-visible, .footer :focus-visible, .kp :focus-visible, .final :focus-visible, .cta-row :focus-visible, .mobile-bar :focus-visible { outline-color: var(--accent); }
 
 .sr-only {
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
@@ -277,7 +285,7 @@ svg { flex: none; }
   display: grid;
   grid-template-columns:
     minmax(200px, 2.4fr) minmax(90px, 1fr) minmax(120px, 1.2fr) minmax(110px, 1.1fr)
-    minmax(90px, 1fr) minmax(120px, 1.2fr) minmax(100px, .9fr) 124px;
+    minmax(90px, 1fr) minmax(140px, 1.2fr) 124px;
   column-gap: 16px; align-items: center; padding-left: 24px; padding-right: 24px;
 }
 .thead {
@@ -301,14 +309,10 @@ svg { flex: none; }
 .td-soft { font-size: 14px; color: #3D4752; }
 .td-mono { font-family: var(--mono); font-size: 14px; color: #3D4752; }
 .td-stack { display: flex; flex-direction: column; gap: 4px; }
-.stock, .price { font-family: var(--display); font-weight: 700; font-size: 16px; font-variant-numeric: tabular-nums; }
-.price-note { font-size: 12px; color: var(--muted); }
-.status { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; }
+.status { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 600; }
 .status i { flex: none; display: inline-block; }
 .status-in { color: var(--ok); }
 .status-in i { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); }
-.status-part { color: var(--warn); }
-.status-part i { width: 8px; height: 8px; border-radius: 50%; border: 2px solid var(--warn); }
 .status-order { color: var(--muted); }
 .status-order i { width: 9px; height: 2px; background: var(--muted); }
 .btn-kp {
@@ -327,6 +331,8 @@ svg { flex: none; }
 .empty-text span { font-size: 14px; color: var(--muted); }
 .empty-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 .footnote { padding: 16px 24px; border-top: 1px solid var(--line); font-size: 13px; line-height: 1.5; color: var(--muted); }
+.more-wrap { padding: 0 16px 16px; }
+.more-wrap .btn { width: 100%; }
 
 /* На экранах уже 1180 px строки таблицы превращаются в карточки */
 @media (max-width: 1179px) {
@@ -383,6 +389,8 @@ svg { flex: none; }
   .kp .btn-md { height: 44px; padding: 0 14px; font-size: 14px; }
   .kp .btn-md svg { display: none; }
   .kp:has(.kp-status:not([hidden])) { flex-wrap: wrap; }
+  /* Пока ничего не выбрано, панель КП не занимает экран над нижней панелью */
+  .kp.is-empty:not(:has(.kp-status:not([hidden]))) { display: none; }
 }
 
 /* ==========================================================================
@@ -429,38 +437,6 @@ svg { flex: none; }
 .ph-card b { font-weight: 600; font-size: 16px; }
 .ph-card span { font-size: 14px; line-height: 1.45; color: var(--muted); }
 
-.map-box { overflow: hidden; border: 1px solid var(--line); border-radius: var(--r); background: var(--bg-alt); }
-.map-box svg { display: block; width: 100%; height: auto; }
-.legend { display: flex; flex-wrap: wrap; gap: 8px 20px; padding: 12px 16px; border-top: 1px solid var(--line); font-size: 12.5px; color: var(--muted); }
-.legend span { display: inline-flex; align-items: center; gap: 8px; }
-.zf { fill: var(--accent); fill-opacity: 0; transition: fill-opacity .2s; }
-.map[data-zone="1"] .zf1 { fill-opacity: .14; }
-.map[data-zone="2"] .zf2 { fill-opacity: .12; }
-.map[data-zone="3"] .zf3 { fill-opacity: .10; }
-.ring { fill: none; stroke: #9AA5B1; stroke-width: 1.2; stroke-dasharray: 5 5; transition: stroke .2s; }
-.map[data-zone="1"] .r70,
-.map[data-zone="2"] .r70,
-.map[data-zone="2"] .r150,
-.map[data-zone="3"] .r150 { stroke: var(--accent-ink); stroke-width: 2.5; stroke-dasharray: none; }
-
-.zones { display: flex; flex-direction: column; gap: 10px; }
-.zone {
-  width: 100%; min-height: 72px; padding: 14px 18px; text-align: left;
-  display: flex; align-items: center; justify-content: space-between; gap: 16px;
-  border: 1px solid var(--line); border-radius: var(--r); background: #fff; color: var(--ink); cursor: pointer;
-}
-.zone:hover { border-color: var(--ink); }
-.zone[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: #fff; }
-.zone-l { display: flex; flex-direction: column; gap: 4px; }
-.zone-name { font-weight: 600; font-size: 16px; line-height: 1.3; }
-.zone-meta { font-family: var(--mono); font-size: 12px; color: var(--muted); line-height: 1.4; }
-.zone-r { flex: none; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
-.zone-time { font-family: var(--display); font-weight: 700; font-size: 20px; line-height: 1.2; }
-.zone-price { font-size: 13px; color: var(--muted); }
-.zone[aria-pressed="true"] .zone-meta,
-.zone[aria-pressed="true"] .zone-price { color: var(--muted-dark); }
-.zone[aria-pressed="true"] .zone-time { color: var(--accent-dark); }
-
 /* Сервис: как ведём заказ */
 .service { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; border-top: 1px solid var(--line); }
 .service li { display: grid; grid-template-columns: 40px 1fr; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--line); }
@@ -475,19 +451,6 @@ svg { flex: none; }
 .truck-spec { font-family: var(--mono); font-size: 13px; color: #3D4752; }
 .truck-note { font-size: 14px; color: var(--muted); }
 
-.calc {
-  display: flex; flex-wrap: wrap; align-items: flex-end; gap: 16px 20px;
-  padding: 24px; border-radius: var(--r); background: var(--ink); color: #fff;
-}
-.calc-title { flex: 1 1 260px; align-self: center; display: flex; flex-direction: column; gap: 6px; }
-.calc-title b { font-family: var(--display); font-weight: 700; font-size: 22px; line-height: 1.2; }
-.calc-title span { font-size: 14px; color: var(--muted-dark); }
-.calc .field label { font-size: 13px; font-weight: 400; color: var(--muted-dark); }
-.calc .input { border: 0; }
-.calc .f-addr { flex: 2 1 280px; }
-.calc .f-tons { flex: 0 1 160px; }
-.calc .form-status { flex-basis: 100%; background: rgba(255,255,255,.08); color: #fff; }
-
 @media (max-width: 767px) {
   .stats { gap: 32px 20px; margin-bottom: 56px; }
   .stat { flex: 1 1 40%; }
@@ -498,11 +461,117 @@ svg { flex: none; }
   .ph-center { padding: 0 8px; }
   .ph-tag { left: 16px; top: 16px; }
   .ph-card { position: static; max-width: none; }
-  .zone { padding: 12px 14px; }
-  .zone-time { font-size: 17px; }
-  .calc { padding: 20px 16px; }
-  .calc .f-tons, .calc .btn { flex: 1 1 100%; }
 }
+
+/* ==========================================================================
+   Как работаем
+   ========================================================================== */
+.steps {
+  margin: 0; padding: 0; list-style: none; counter-reset: step;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;
+}
+.step {
+  counter-increment: step; position: relative;
+  display: flex; flex-direction: column; gap: 10px; padding: 24px;
+  border: 1px solid var(--line); border-radius: var(--r); background: #fff;
+}
+.step::before {
+  content: counter(step, decimal-leading-zero);
+  font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--accent-ink);
+}
+.step b { font-family: var(--display); font-weight: 700; font-size: 19px; line-height: 1.25; }
+.step span { font-size: 14.5px; line-height: 1.5; color: var(--muted); }
+
+/* ==========================================================================
+   Ошибки при выборе трубы
+   ========================================================================== */
+.mistakes { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+.mistake {
+  display: flex; flex-direction: column; gap: 10px; padding: 24px 24px 24px 22px;
+  border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: var(--r); background: #fff;
+}
+.mistake b { font-family: var(--display); font-weight: 700; font-size: 19px; line-height: 1.25; }
+.mistake p { font-size: 15px; line-height: 1.55; color: #3D4752; }
+.mistake .check-it { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 12px; line-height: 1.5; color: var(--muted); }
+.cta-row {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px;
+  margin-top: 24px; padding: 24px; border-radius: var(--r); background: var(--ink); color: #fff;
+}
+.cta-row p { max-width: 640px; font-size: 16px; line-height: 1.5; color: var(--muted-dark); }
+.cta-row b { display: block; margin-bottom: 4px; font-family: var(--display); font-size: 20px; color: #fff; }
+
+/* ==========================================================================
+   FAQ
+   ========================================================================== */
+.faq { display: flex; flex-direction: column; border-top: 1px solid var(--line); max-width: 920px; }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  min-height: 64px; padding: 16px 0; cursor: pointer; list-style: none;
+  font-family: var(--display); font-weight: 700; font-size: 18px; line-height: 1.3;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: ''; flex: none; width: 14px; height: 14px;
+  background:
+    linear-gradient(var(--ink), var(--ink)) center / 14px 2px no-repeat,
+    linear-gradient(var(--ink), var(--ink)) center / 2px 14px no-repeat;
+}
+.faq details[open] summary::after { background: linear-gradient(var(--ink), var(--ink)) center / 14px 2px no-repeat; }
+.faq details p { padding: 0 48px 20px 0; font-size: 15.5px; line-height: 1.6; color: #3D4752; }
+@media (max-width: 767px) {
+  .faq summary { font-size: 16px; }
+  .faq details p { padding-right: 0; }
+}
+
+/* ==========================================================================
+   Финальный экран
+   ========================================================================== */
+.final {
+  padding: 88px 0;
+  background-color: var(--ink);
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 80px 80px;
+  color: #fff;
+}
+.final-in { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 32px 64px; }
+.final-text { display: flex; flex-direction: column; gap: 14px; max-width: 720px; }
+.final-text .h2 { color: #fff; }
+.final-text p { font-size: 18px; line-height: 1.55; color: var(--muted-dark); }
+.final-actions { display: flex; flex-direction: column; gap: 14px; min-width: 280px; }
+.final-actions .phone-big { font-family: var(--display); font-weight: 700; font-size: 22px; color: #fff; text-decoration: none; }
+.final-actions small { font-size: 13px; color: var(--muted-dark); }
+@media (max-width: 767px) {
+  .final { padding: 64px 0; }
+  .final-actions { min-width: 0; width: 100%; }
+}
+
+/* ==========================================================================
+   Позиции из каталога в форме и окно «Запросить прайс»
+   ========================================================================== */
+.form-items {
+  display: flex; align-items: flex-start; gap: 10px; padding: 12px 14px;
+  border-radius: var(--r); background: var(--tint); font-size: 14px; line-height: 1.45;
+}
+.form-items b { font-weight: 600; }
+.form-items button { margin-left: auto; flex: none; border: 0; background: none; color: var(--accent-ink); font-size: 13px; font-weight: 600; cursor: pointer; text-decoration: underline; }
+
+.price-dialog {
+  width: min(460px, calc(100% - 32px)); padding: 0; border: 0; border-radius: var(--r);
+  background: #fff; color: var(--ink);
+}
+.price-dialog::backdrop { background: rgba(15, 23, 31, .7); }
+.price-dialog form { display: flex; flex-direction: column; gap: 18px; padding: 32px; }
+.price-dialog .dialog-close {
+  position: absolute; top: 12px; right: 12px; width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  border: 0; background: none; color: var(--muted); cursor: pointer;
+}
+.price-dialog .dialog-close:hover { color: var(--ink); }
+@media (max-width: 767px) { .price-dialog form { padding: 24px; } }
+button.link-accent { border: 0; background: none; padding: 0; cursor: pointer; font: inherit; font-weight: 600; font-size: 15px; }
 
 /* ---------- Футер ---------- */
 .footer { padding: 56px 0 40px; background: var(--ink); color: #fff; }

@@ -3,19 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Трубы ПНД и гофра оптом — концепт лендинга</title>
-<meta name="description" content="Концепт B2B-лендинга поставщика труб ПНД, гофрированных труб и фитингов напрямую с завода-изготовителя: цена ниже заводского прайса, документы на каждую партию, доставка на объект.">
+<title>Трубы ПНД и гофра оптом — Строй Страна</title>
+<meta name="description" content="Трубы ПНД, гофрированные трубы и фитинги с завода-изготовителя: цена до 30% ниже прайса завода, паспорт качества на каждую партию, доставка по всей России.">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#1A2530">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' rx='4' fill='%231A2530'/%3E%3Ccircle cx='18' cy='18' r='12' fill='none' stroke='%23fff' stroke-width='2.5'/%3E%3Ccircle cx='18' cy='18' r='6.5' fill='none' stroke='%23FF6B00' stroke-width='4.5'/%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Inter+Tight:wght@600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<link rel="preload" href="assets/fonts/inter-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-tight-cyrillic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
 
-<div class="demo-bar">Концепт-макет · цифры в [скобках] — заглушки · формы не отправляют данные</div>
+<div class="demo-bar">Концепт-макет · цифры в [скобках] — заглушки · формы пока не отправляют данные</div>
 
 <!-- ============================ 01 · Первый экран ============================ -->
 <section class="hero" aria-labelledby="hero-title">
@@ -30,8 +29,9 @@
       </a>
       <nav class="nav" aria-label="Разделы">
         <a href="#catalog">Каталог</a>
-        <a href="#trust">Завод и сервис</a>
+        <a href="#process">Как работаем</a>
         <a href="#delivery">Доставка</a>
+        <a href="#faq">Вопросы</a>
         <a href="#contacts">Контакты</a>
       </nav>
       <div class="header-contacts">
@@ -39,19 +39,19 @@
           <a href="tel:+78126451846">+7 (812) 645-18-46</a>
           <span>На связи 9:00–18:00 по Москве</span>
         </div>
-        <a class="btn btn-outline-dark header-price" href="#lead-form">
+        <button type="button" class="btn btn-outline-dark header-price" data-open-price>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 20h16"/></svg>
-          Прайс-лист
-        </a>
+          Запросить прайс
+        </button>
       </div>
     </div>
   </header>
 
   <div class="container hero-grid">
     <div class="hero-main">
-      <div class="live"><i aria-hidden="true"></i>Напрямую с завода-изготовителя · работаем с заводом с 2024 года</div>
+      <div class="live"><i aria-hidden="true"></i>Поставляем с завода-изготовителя с 2024 года · по всей России</div>
       <h1 class="h1" id="hero-title">Трубы ПНД, гофра и фитинги с завода-изготовителя — <em>дешевле заводского прайса</em></h1>
-      <p class="hero-sub">Большой объём — в наличии на заводе, остальное изготовят под заказ: ПНД Ø20–[630] мм SDR 11–26, гофра SN4–SN16 и фитинги. Сертификаты и паспорта — на каждую партию. Технические условия завода согласованы для объектов атомной энергетики.</p>
+      <p class="hero-sub">Закроем заявку целиком: трубы ПНД Ø20–[630] мм, гофра и фитинги — одно КП, один договор, одна машина. Большой объём — в наличии на заводе, остальное изготовят под заказ.</p>
       <a class="btn btn-primary btn-lg btn-block mobile-cta" href="#lead-form">Загрузить спецификацию</a>
       <div class="facts">
         <div class="fact"><b>до 30%</b><span>ниже опубликованного прайса завода — точная цена зависит от объёма и позиций</span></div>
@@ -65,8 +65,13 @@
       <div class="form-head">
         <span class="overline">Заявка на расчёт</span>
         <h2 class="form-title" id="form-title">Цена до 30% ниже прайса завода</h2>
-        <p class="form-note">Пришлите спецификацию — посчитаем цену, срок изготовления и доставку до объекта. Цену фиксируем на [10] рабочих дней.</p>
+        <p class="form-note">Пришлите спецификацию — посчитаем цену, срок изготовления и доставку до объекта.</p>
       </div>
+      <div class="form-items" id="form-items" hidden>
+        <span id="form-items-text"></span>
+        <button type="button" id="form-items-clear">Убрать</button>
+      </div>
+      <input type="hidden" name="items" id="items">
       <label class="dropzone" for="spec">
         <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#1A2530" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4h12l7 7v21H9z"/><path d="M21 4v7h7"/><path d="M18.5 27V16"/><path d="M14 20.5l4.5-4.5 4.5 4.5"/></svg>
         <span class="dz-text">
@@ -79,8 +84,11 @@
         <label for="contact">Телефон или e-mail</label>
         <input class="input" id="contact" name="contact" type="text" autocomplete="tel" placeholder="+7 900 000-00-00">
       </div>
+      <div class="field">
+        <label for="city">Куда доставить <span style="font-weight:400;color:var(--muted)">— если нужна доставка</span></label>
+        <input class="input" id="city" name="city" type="text" autocomplete="address-level2" placeholder="Город или адрес объекта">
+      </div>
       <div class="checks">
-        <label class="check"><input type="checkbox" name="delivery"><span>Нужна доставка на объект</span></label>
         <label class="check"><input type="checkbox" name="consent" required><span>Согласен на обработку персональных данных по <a href="#contacts">политике</a></span></label>
       </div>
       <button class="btn btn-primary btn-lg" type="submit">
@@ -90,11 +98,11 @@
       <p class="form-status" role="status" hidden></p>
       <p class="form-sla">Отвечаем по телефону и почте с 9:00 до 18:00 по Москве. Если на объекте горит — оставьте заявку в любое время: утром перезвоним первыми.</p>
       <div class="form-foot">
-        <a class="link-accent" href="#catalog">
+        <button type="button" class="link-accent" data-open-price>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 20h16"/></svg>
-          Скачать оптовый прайс
-        </a>
-        <span class="mono">PDF · [дата]</span>
+          Запросить оптовый прайс
+        </button>
+        <span class="mono">пришлём на почту</span>
       </div>
     </form>
   </div>
@@ -129,7 +137,7 @@
       <rect x="-10" y="60" width="1070" height="150" fill="url(#hpBody)"/>
       <rect x="-10" y="80" width="1070" height="3" fill="#1F6FEB" fill-opacity=".9"/>
       <rect x="-10" y="186" width="1070" height="3" fill="#1F6FEB" fill-opacity=".55"/>
-      <text x="150" y="140" font-family="'JetBrains Mono', monospace" font-size="12" letter-spacing="1.5" fill="#AEB8C2" fill-opacity=".55">[ЗАВОД] · ТРУБА ПЭ 100 SDR 17 — 110×6,6 ПИТЬЕВАЯ · ГОСТ 18599-2001 · ПАРТИЯ [0412] · 04.11.26</text>
+      <text x="150" y="140" font-family="'JetBrains Mono', monospace" font-size="12" letter-spacing="1.5" fill="#AEB8C2" fill-opacity=".55">ТРУБА ПЭ 100 SDR 17 — 110×6,6 ПИТЬЕВАЯ · ГОСТ 18599-2001 · PN 10 · ПАСПОРТ НА КАЖДУЮ ПАРТИЮ</text>
       <rect x="1060" y="69" width="260" height="132" fill="url(#hpBore)"/>
       <rect x="1060" y="60" width="260" height="9" fill="url(#hpHatch)"/>
       <rect x="1060" y="201" width="260" height="9" fill="url(#hpHatch)"/>
@@ -160,7 +168,7 @@
       <span>ГОСТ Р 54475-2011</span>
       <span>Паспорт на каждую партию</span>
       <span>Напрямую с завода-изготовителя</span>
-      <span>С НДС · ЭДО</span>
+      <span>Доставка по всей России</span>
     </div>
   </div>
 </section>
@@ -170,14 +178,14 @@
   <div class="container">
     <div class="section-head">
       <div class="text">
-        <span class="overline">02 / Ассортимент и сроки</span>
-        <h2 class="h2" id="catalog-title">Что изготовит завод под ваш заказ</h2>
-        <p class="lead-muted">Большой объём — в наличии на заводе (на [дата]), многие позиции изготавливают под заказ. Срок зависит от объёма, позиций и доставки: называем его с запасом, а отгружали, как правило, раньше.</p>
+        <span class="overline">02 / Ассортимент</span>
+        <h2 class="h2" id="catalog-title">Трубы, гофра и фитинги — одним КП</h2>
+        <p class="lead-muted">Отметьте позиции — пришлём цену, срок и доставку одним предложением. Большой объём обычно есть на заводе, остальное изготавливают под заказ: срок называем с запасом.</p>
       </div>
-      <a class="btn btn-outline" href="#lead-form">
+      <button type="button" class="btn btn-outline" data-open-price>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 20h16"/></svg>
-        Скачать прайс · PDF
-      </a>
+        Запросить прайс
+      </button>
     </div>
 
     <div class="cat-cards" role="group" aria-label="Товарные группы">
@@ -190,7 +198,7 @@
           <span class="cat-title">Трубы ПНД напорные</span>
           <span class="cat-gost muted">ГОСТ 18599-2001</span>
         </span>
-        <span class="cat-spec muted">Ø20–630 мм · SDR 11–26 · ПЭ100 / ПЭ80</span>
+        <span class="cat-spec muted">Ø20–[630] мм · SDR 11–26 · ПЭ100 / ПЭ80</span>
         <span class="cat-stock"><i aria-hidden="true"></i>ТУ согласованы для атомной энергетики</span>
       </button>
       <button type="button" class="cat-card" data-tab="kan" aria-pressed="false">
@@ -202,8 +210,8 @@
           <span class="cat-title">Гофра для канализации</span>
           <span class="cat-gost muted">ГОСТ Р 54475-2011</span>
         </span>
-        <span class="cat-spec muted">Ø110–1200 мм · SN 4–16 · ПП / ПНД</span>
-        <span class="cat-stock"><i aria-hidden="true"></i>под заказ с завода</span>
+        <span class="cat-spec muted">Ø110–[1200] мм · SN 4–16 · ПП / ПНД</span>
+        <span class="cat-stock"><i aria-hidden="true"></i>в одном КП с трубой ПНД</span>
       </button>
       <button type="button" class="cat-card" data-tab="cab" aria-pressed="false">
         <span class="cat-top">
@@ -215,7 +223,7 @@
           <span class="cat-gost muted">Двустенная ПНД</span>
         </span>
         <span class="cat-spec muted">Ø40–200 мм · 450 / 750 Н · бухты и отрезки</span>
-        <span class="cat-stock"><i aria-hidden="true"></i>под заказ с завода</span>
+        <span class="cat-stock"><i aria-hidden="true"></i>в одном КП с трубой ПНД</span>
       </button>
       <button type="button" class="cat-card" data-tab="fit" aria-pressed="false">
         <span class="cat-top">
@@ -227,7 +235,7 @@
           <span class="cat-gost muted">Компрессия · электромуфта · сварка</span>
         </span>
         <span class="cat-spec muted">Ø20–630 мм · отводы, тройники, муфты, фланцы</span>
-        <span class="cat-stock"><i aria-hidden="true"></i>в одном КП с трубой</span>
+        <span class="cat-stock"><i aria-hidden="true"></i>подберём под SDR вашей трубы</span>
       </button>
     </div>
 
@@ -248,24 +256,27 @@
         </div>
       </div>
 
-      <div role="table" aria-label="Ассортимент: наличие на заводе и сроки" aria-describedby="catalog-footnote">
+      <div role="table" aria-label="Ассортимент: размеры, масса и наличие" aria-describedby="catalog-footnote">
         <div class="thead" role="row" id="thead"></div>
         <div class="rows" role="rowgroup" id="rows"></div>
       </div>
+      <div class="more-wrap" id="more-wrap" hidden>
+        <button type="button" class="btn btn-outline" id="more">Показать все позиции</button>
+      </div>
       <div class="empty" id="empty" hidden>
         <div class="empty-text">
-          <b>По этому фильтру сейчас ничего нет на заводе</b>
-          <span>Изготовят под заказ — срок с запасом и цену пришлём в КП.</span>
+          <b>По этому фильтру позиций в списке нет</b>
+          <span>Завод изготовит под заказ — срок с запасом и цену пришлём в КП.</span>
         </div>
         <div class="empty-actions">
           <button type="button" class="btn btn-outline" id="reset">Сбросить фильтр</button>
           <a class="btn btn-primary" href="#lead-form">Запросить поставку</a>
         </div>
       </div>
-      <p class="footnote" id="catalog-footnote">* Цена ориентировочная, с НДС, при заказе от указанного объёма — до 30% ниже опубликованного прайса завода-изготовителя. Точная цена зависит от объёма, позиций и доставки — пришлём в КП. Масса 1 м — по ГОСТ 18599-2001, фактическая масса партии — в паспорте качества. Цена из КП фиксируется на [10] рабочих дней.</p>
+      <p class="footnote" id="catalog-footnote">Цена — в КП: до 30% ниже опубликованного прайса завода-изготовителя, с учётом объёма, позиций и доставки. Наличие — ориентир, точный срок называем в КП. Масса 1 м — расчётная по ГОСТ 18599-2001 (средняя толщина стенки, плотность 950 кг/м³), фактическая — в паспорте партии.</p>
     </div>
 
-    <div class="kp" id="kp" aria-live="polite">
+    <div class="kp is-empty" id="kp" aria-live="polite">
       <div class="kp-left">
         <span class="kp-count" id="kp-count">0</span>
         <span class="kp-text">
@@ -274,7 +285,7 @@
         </span>
       </div>
       <div class="kp-right">
-        <span>До 30% ниже прайса завода · фиксируем на [10] дней</span>
+        <span>Цена до 30% ниже прайса завода</span>
         <button type="button" class="btn btn-primary btn-md" id="kp-send">
           Отправить на расчёт
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
@@ -285,14 +296,34 @@
   </div>
 </section>
 
-<!-- ============================ 03 · Завод и сервис ============================ -->
-<section class="section" id="trust" aria-labelledby="trust-title">
+<!-- ============================ 03 · Как работаем ============================ -->
+<section class="section" id="process" aria-labelledby="process-title">
   <div class="container">
     <div class="section-head">
       <div class="text">
-        <span class="overline">03 / Завод и сервис</span>
-        <h2 class="h2" id="trust-title">Работаем с заводом-изготовителем с 2024 года</h2>
-        <p class="lead-muted">Всё ниже — из нашей практики закупок, а не из рекламного буклета. Подтверждающие документы покажем по запросу.</p>
+        <span class="overline">03 / Как работаем</span>
+        <h2 class="h2" id="process-title">От спецификации до разгрузки на объекте</h2>
+        <p class="lead-muted">Один менеджер ведёт заказ от первого письма до закрывающих документов.</p>
+      </div>
+    </div>
+    <ol class="steps">
+      <li class="step"><b>Заявка</b><span>Спецификация, список от руки или звонок. Позиции из каталога можно собрать прямо на сайте.</span></li>
+      <li class="step"><b>КП</b><span>Цена, срок изготовления и доставка — одним предложением в течение [1] рабочего дня.</span></li>
+      <li class="step"><b>Договор и счёт</b><span>[Работаем по договору поставки, цены с НДС.] Условия оплаты — в договоре.</span></li>
+      <li class="step"><b>Изготовление</b><span>Срок называем с запасом. Паспорт качества и сертификаты — на каждую партию.</span></li>
+      <li class="step"><b>Отгрузка и доставка</b><span>Длинномер, манипулятор или ТК — под длину трубы и условия разгрузки. Или самовывоз с завода.</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================ 04 · Почему Строй Страна ============================ -->
+<section class="section section-alt" id="trust" aria-labelledby="trust-title">
+  <div class="container">
+    <div class="section-head">
+      <div class="text">
+        <span class="overline">04 / Почему Строй Страна</span>
+        <h2 class="h2" id="trust-title">Один поставщик на всю заявку — и цена ниже прайса завода</h2>
+        <p class="lead-muted">Поставляем трубу ПНД и фитинги с завода-изготовителя с 2024 года. Подтверждающие документы покажем по запросу.</p>
       </div>
       <a class="btn btn-outline" href="#lead-form">Запросить КП</a>
     </div>
@@ -301,7 +332,7 @@
       <div class="stat">
         <span class="stat-mark" aria-hidden="true"></span>
         <span class="stat-num">с 2024</span>
-        <span class="stat-cap">работаем с заводом-изготовителем труб ПНД и фитингов</span>
+        <span class="stat-cap">поставляем трубы ПНД и фитинги завода-изготовителя</span>
         <span class="stat-src">Подтверждение: договор поставки и история заказов</span>
       </div>
       <div class="stat">
@@ -330,11 +361,11 @@
           <span class="ph-tag">Фото · производство труб · съёмка [дата]</span>
           <span class="ph-center">
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h4l2-3h6l2 3h4v11H3z"/><circle cx="12" cy="13" r="4"/></svg>
-            <span>[Фото: экструзионная линия и готовые трубы на заводе-изготовителе]</span>
+            <span>[Фото: экструзионная линия и готовые трубы]</span>
           </span>
           <div class="ph-card">
-            <b>Завод-изготовитель</b>
-            <span>Трубы ПНД, гофрированные трубы и фитинги — одно производство</span>
+            <b>Трубы ПНД, гофра и фитинги — одно производство</b>
+            <span>Паспорт качества на каждую партию, сертификаты соответствия — сразу, с пояснениями</span>
             <a class="link-accent" href="#lead-form" style="min-height:32px;font-size:14px">
               Запросить сертификаты
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
@@ -343,70 +374,165 @@
         </div>
         <div class="ph-row">
           <div class="ph ph-small" role="img" aria-label="Место для фотографии паспорта качества">[Фото: паспорт качества и маркировка партии]</div>
-          <div class="ph ph-small" role="img" aria-label="Место для фотографии погрузки">[Фото: погрузка труб 12 м на заводе]</div>
+          <div class="ph ph-small" role="img" aria-label="Место для фотографии погрузки">[Фото: погрузка труб 12 м]</div>
         </div>
       </div>
 
       <div class="split-map">
         <div class="head">
           <span class="overline">Как ведём заказ</span>
-          <h3 class="h3">Сервис, который мы проверили на своих закупках</h3>
+          <h3 class="h3">Что вы получаете, работая с нами</h3>
         </div>
         <ul class="service">
-          <li><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A2530" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></span><div><b>Менеджер на связи с 9:00 до 18:00 по Москве</b><span>Отвечает по телефону и почте. Если на объекте горит — оставьте заявку в любое время: утром перезвоним первыми.</span></div></li>
-          <li><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A2530" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19c.6-3.3 2.8-5 5.5-5s4.9 1.7 5.5 5"/><path d="M16 6h5M18.5 3.5V8.5"/></svg></span><div><b>К сложному заказу подключается руководство завода</b><span>Сроки, документы и нестандартные позиции решаются быстро, без недели согласований.</span></div></li>
+          <li><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A2530" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></span><div><b>Один менеджер на всю заявку</b><span>На связи с 9:00 до 18:00 по Москве, по телефону и почте. Если на объекте горит — оставьте заявку в любое время: утром перезвоним первыми.</span></div></li>
+          <li><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A2530" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19c.6-3.3 2.8-5 5.5-5s4.9 1.7 5.5 5"/><path d="M16 6h5M18.5 3.5V8.5"/></svg></span><div><b>Сложные вопросы решаем напрямую с производством</b><span>Нестандартные позиции, сроки и документы согласуем быстро — без недели переписки.</span></div></li>
           <li><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A2530" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h10l4 4v14H7z"/><path d="M17 3v4h4"/><path d="M10 12h8M10 16h8"/><path d="M3 7v14h12"/></svg></span><div><b>Все документы и сертификаты — сразу</b><span>Сертификаты, паспорта качества и пояснения по каждому документу — для приёмки и исполнительной документации.</span></div></li>
-          <li><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A2530" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span><div><b>Срок — с запасом</b><span>Срок изготовления называем с запасом, чтобы не подвести объект. На практике отгрузки приходили раньше срока.</span></div></li>        </ul>
+          <li><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1A2530" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span><div><b>Срок — с запасом</b><span>Срок изготовления называем с запасом, чтобы не подвести объект. На практике отгрузки приходили раньше срока.</span></div></li>
+        </ul>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="fleet-head" id="delivery">
-      <h3 class="h3">Доставка с завода до объекта</h3>
-      <p>Завод может взять доставку на себя. Транспорт подбираем под длину трубы и условия разгрузки, условия обсуждаем под каждый заказ.</p>
+<!-- ============================ 05 · Ошибки при выборе ============================ -->
+<section class="section" id="mistakes" aria-labelledby="mistakes-title">
+  <div class="container">
+    <div class="section-head">
+      <div class="text">
+        <span class="overline">05 / Перед заказом</span>
+        <h2 class="h2" id="mistakes-title">Пять ошибок при выборе трубы ПНД</h2>
+        <p class="lead-muted">Каждая из них стоит дороже, чем экономия на метре трубы. Проверьте спецификацию до заказа.</p>
+      </div>
+    </div>
+    <div class="mistakes">
+      <article class="mistake">
+        <b>SDR не под давление сети</b>
+        <p>SDR — отношение диаметра к толщине стенки: чем он меньше, тем толще стенка и выше допустимое давление. У ПЭ 100 SDR 26 держит 6,3 бар, SDR 17 — 10 бар, SDR 11 — 16 бар.</p>
+        <span class="check-it">Проверить: рабочее давление в проекте не выше PN трубы</span>
+      </article>
+      <article class="mistake">
+        <b>ПЭ 80 вместо ПЭ 100</b>
+        <p>При одном SDR труба из ПЭ 80 держит меньшее давление: SDR 17 — 8 бар против 10 у ПЭ 100. Внешне трубы не отличить.</p>
+        <span class="check-it">Проверить: марку ПЭ в маркировке на трубе и в паспорте</span>
+      </article>
+      <article class="mistake">
+        <b>Техническая труба в питьевом водопроводе</b>
+        <p>Для питьевой воды нужна труба с синими полосами с пометкой «питьевая». Техническая дешевле, но в водопровод питьевой воды её ставить нельзя.</p>
+        <span class="check-it">Проверить: синие полосы и слово «питьевая» в маркировке</span>
+      </article>
+      <article class="mistake">
+        <b>Облегчённая стенка</b>
+        <p>Недобросовестные производители экономят сырьё и делают стенку тоньше, чем по ГОСТ. Труба держит меньше и быстрее выходит из строя.</p>
+        <span class="check-it">Проверить: толщину стенки на торце и массу 1 м по паспорту</span>
+      </article>
+      <article class="mistake">
+        <b>Сварка труб разного SDR встык</b>
+        <p>Стыковая сварка надёжна только при одинаковой толщине стенок. Трубы и фитинги разного SDR соединяют электросварными муфтами или переходами.</p>
+        <span class="check-it">Проверить: SDR трубы и фитингов в одной спецификации</span>
+      </article>
+    </div>
+    <div class="cta-row">
+      <p><b>Сомневаетесь в подборе?</b>Пришлите спецификацию — сверим позиции с производством и пришлём КП.</p>
+      <a class="btn btn-primary btn-md" href="#lead-form">Загрузить спецификацию</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 06 · Доставка ============================ -->
+<section class="section section-alt" id="delivery" aria-labelledby="delivery-title">
+  <div class="container">
+    <div class="fleet-head">
+      <div class="text" style="display:flex;flex-direction:column;gap:14px">
+        <span class="overline">06 / Доставка</span>
+        <h2 class="h2" id="delivery-title">Доставка на объект по всей России</h2>
+      </div>
+      <p>Транспорт подбираем под длину трубы и условия разгрузки. Стоимость доставки — в КП: укажите город или адрес объекта в заявке.</p>
     </div>
     <div class="fleet">
-      <div class="truck">
+      <div class="truck" style="background:#fff">
         <svg width="120" height="48" viewBox="0 0 120 48" fill="none" stroke="#1A2530" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="16" width="76" height="14"/><path d="M6 21h76M6 25.5h76"/><path d="M88 34V14h14l10 10v10z"/><path d="M92 18h9l6 6H92z"/><path d="M4 34h108M82 30h6"/><circle cx="16" cy="38" r="4" fill="#FFFFFF"/><circle cx="26" cy="38" r="4" fill="#FFFFFF"/><circle cx="70" cy="38" r="4" fill="#FFFFFF"/><circle cx="80" cy="38" r="4" fill="#FFFFFF"/><circle cx="102" cy="38" r="4" fill="#FFFFFF"/></svg>
         <span class="truck-title">Длинномер 13,6 м</span>
         <span class="truck-spec">трубы по 12 м · до 20 т</span>
-        <span class="truck-note">Заводской транспорт или перевозчик</span>
+        <span class="truck-note">Большие партии — прямо на объект</span>
       </div>
-      <div class="truck">
+      <div class="truck" style="background:#fff">
         <svg width="120" height="48" viewBox="0 0 120 48" fill="none" stroke="#1A2530" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 34V16h14l6 8v10"/><path d="M11 19h10l4 5H11z"/><path d="M28 34h76v-8H28"/><path d="M36 26V12l38-7v12"/><circle cx="36" cy="12" r="2"/><path d="M70 17h8"/><path d="M6 34h100"/><circle cx="18" cy="38" r="4" fill="#FFFFFF"/><circle cx="52" cy="38" r="4" fill="#FFFFFF"/><circle cx="92" cy="38" r="4" fill="#FFFFFF"/></svg>
         <span class="truck-title">Манипулятор</span>
         <span class="truck-spec">разгрузка без крана</span>
         <span class="truck-note">Если на объекте нет подъёмной техники</span>
       </div>
-      <div class="truck">
+      <div class="truck" style="background:#fff">
         <svg width="120" height="48" viewBox="0 0 120 48" fill="none" stroke="#1A2530" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="14" y="10" width="60" height="26"/><path d="M26 10v26M38 10v26M50 10v26M62 10v26"/><path d="M84 23h26"/><path d="M102 16l8 7-8 7"/></svg>
         <span class="truck-title">Сборный груз через ТК</span>
         <span class="truck-spec">фитинги, бухты, небольшие партии</span>
         <span class="truck-note">В любой регион России</span>
       </div>
-      <div class="truck">
+      <div class="truck" style="background:#fff">
         <svg width="120" height="48" viewBox="0 0 120 48" fill="none" stroke="#1A2530" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M26 34V14h44v20"/><path d="M70 34V20h12l8 7v7"/><path d="M73 22h8l5 5H73z"/><path d="M24 34h68"/><circle cx="38" cy="38" r="4" fill="#FFFFFF"/><circle cx="80" cy="38" r="4" fill="#FFFFFF"/></svg>
         <span class="truck-title">Самовывоз с завода</span>
         <span class="truck-spec">погрузка на заводе</span>
         <span class="truck-note">Ваш транспорт — по согласованию времени</span>
       </div>
     </div>
+  </div>
+</section>
 
-    <form class="calc" id="calc-form" aria-label="Расчёт доставки" novalidate>
-      <div class="calc-title">
-        <b>Рассчитать доставку на объект</b>
-        <span>Стоимость и тип машины — сразу в ответе</span>
+<!-- ============================ 07 · Вопросы ============================ -->
+<section class="section" id="faq" aria-labelledby="faq-title">
+  <div class="container">
+    <div class="section-head">
+      <div class="text">
+        <span class="overline">07 / Вопросы</span>
+        <h2 class="h2" id="faq-title">Частые вопросы закупщиков</h2>
       </div>
-      <div class="field f-addr">
-        <label for="addr">Адрес объекта</label>
-        <input class="input" id="addr" name="addr" type="text" placeholder="Город, улица или координаты">
-      </div>
-      <div class="field f-tons">
-        <label for="tons">Объём, т</label>
-        <input class="input" id="tons" name="tons" type="text" inputmode="decimal" placeholder="12">
-      </div>
-      <button class="btn btn-primary btn-md" type="submit">Рассчитать</button>
-      <p class="form-status" role="status" hidden></p>
-    </form>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Почему у вас дешевле, чем в прайсе завода?</summary>
+        <p>Мы работаем с заводом на постоянной основе с 2024 года и закупаем регулярно, поэтому получаем цену ниже опубликованного прайса. Часть этой разницы отдаём клиентам — до 30% в зависимости от объёма и позиций.</p>
+      </details>
+      <details>
+        <summary>Какие сроки поставки?</summary>
+        <p>Большой объём обычно есть на заводе, остальное изготавливают под заказ. Срок зависит от объёма, позиций и доставки — называем его в КП с запасом. На практике отгрузки приходили раньше срока.</p>
+      </details>
+      <details>
+        <summary>Какие документы будут на трубу?</summary>
+        <p>Паспорт качества на каждую партию и сертификаты соответствия — сразу, с пояснениями. Их достаточно для приёмки и исполнительной документации. Технические условия завода согласованы для объектов атомной энергетики — документ покажем по запросу.</p>
+      </details>
+      <details>
+        <summary>Работаете с НДС?</summary>
+        <p>[Да: цены с НДС, закрывающие документы — по ЭДО или на бумаге.]</p>
+      </details>
+      <details>
+        <summary>Какая минимальная партия?</summary>
+        <p>[Принимаем заявки от одной бухты или одного отрезка 12 м.] Чем больше объём, тем ниже цена за метр — точный расчёт пришлём в КП.</p>
+      </details>
+      <details>
+        <summary>Доставляете в мой регион?</summary>
+        <p>Да, по всей России: длинномером или манипулятором на объект, сборным грузом через транспортную компанию или самовывозом с завода. Стоимость доставки — в КП.</p>
+      </details>
+      <details>
+        <summary>Можно заказать трубу, гофру и фитинги вместе?</summary>
+        <p>Да. Соберите позиции в каталоге или пришлите спецификацию — подберём фитинги под SDR вашей трубы и пришлём одно КП, один счёт и одну машину.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 08 · Финальный экран ============================ -->
+<section class="final" aria-labelledby="final-title">
+  <div class="container final-in">
+    <div class="final-text">
+      <span class="overline" style="color:var(--accent-dark)">Заявка на расчёт</span>
+      <h2 class="h2" id="final-title">Пришлите спецификацию — КП с ценой до 30% ниже прайса завода</h2>
+      <p>Цена, срок изготовления и доставка до объекта — одним предложением. Excel, PDF или фото списка — как есть.</p>
+    </div>
+    <div class="final-actions">
+      <a class="btn btn-primary btn-lg" href="#lead-form">Загрузить спецификацию</a>
+      <button type="button" class="btn btn-outline-dark" style="height:52px" data-open-price>Запросить оптовый прайс</button>
+      <a class="phone-big" href="tel:+78126451846">+7 (812) 645-18-46</a>
+      <small>9:00–18:00 по Москве · info@stroi-strana.ru</small>
+    </div>
   </div>
 </section>
 
@@ -446,6 +572,27 @@
     </div>
   </div>
 </footer>
+
+<!-- ============================ Окно «Запросить прайс» ============================ -->
+<dialog class="price-dialog" id="price-dialog" aria-labelledby="price-title">
+  <form id="price-form" method="dialog" novalidate>
+    <button type="button" class="dialog-close" id="price-close" aria-label="Закрыть">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <div class="form-head">
+      <span class="overline">Оптовый прайс</span>
+      <h2 class="form-title" id="price-title">Прайс с ценами ниже прайса завода</h2>
+      <p class="form-note">Трубы ПНД, гофра и фитинги. Пришлём на почту или перезвоним в рабочее время.</p>
+    </div>
+    <div class="field">
+      <label for="price-contact">Телефон или e-mail</label>
+      <input class="input" id="price-contact" name="contact" type="text" autocomplete="email" placeholder="zakupki@company.ru">
+    </div>
+    <label class="check"><input type="checkbox" name="consent" required><span>Согласен на обработку персональных данных по <a href="#contacts">политике</a></span></label>
+    <button class="btn btn-primary btn-lg" type="submit">Получить прайс</button>
+    <p class="form-status" role="status" hidden></p>
+  </form>
+</dialog>
 
 <nav class="mobile-bar" aria-label="Быстрые действия">
   <a href="tel:+78126451846">
