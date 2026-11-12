@@ -68,19 +68,6 @@
         R('f5', 'Втулка под фланец + фланец', 'комплект, Ру 10', 225, '225', 'Фланец', 'SDR 17', 'комплект', 'фланцевое', '[36] компл.', 'part'),
         R('f6', 'Муфта для гофры + кольцо', 'для гофры SN 8', 160, '160', 'Раструб', 'SN 8', 'поштучно', 'раструб', '[600] шт', 'in')
       ]
-    },
-    weld: {
-      head: ['Позиция', 'Диаметры, мм', 'Тип сварки', 'Питание', 'Комплектация', 'Наличие', 'Цена от*'],
-      dia: [['Все', 0, 9999], ['до 160', 0, 160], ['до 315', 161, 315], ['от 315', 316, 9999]],
-      clsLabel: 'Сварка', cls: ['Все', 'Стыковая', 'Электромуфтовая'],
-      unit: '₽/шт', priceNote: 'под заказ', icon: 'weld',
-      short: function (r) { return r.name + ' ' + r.size; },
-      rows: [
-        R('w1', 'Аппарат стыковой сварки', 'механический привод', 160, '40–160', 'Стыковая', 'стыковая', '220 В', 'нагреватель, торцеватель', '—', 'order'),
-        R('w2', 'Аппарат стыковой сварки', 'гидравлический привод', 315, '90–315', 'Стыковая', 'стыковая', '220 В', 'гидроблок, вкладыши', '—', 'order'),
-        R('w3', 'Аппарат стыковой сварки', 'гидравлический привод', 630, '250–630', 'Стыковая', 'стыковая', '380 В', 'гидроблок, вкладыши', '—', 'order'),
-        R('w4', 'Аппарат электромуфтовой сварки', 'для электросварных фитингов', 1200, 'до [1200]', 'Электромуфтовая', 'электромуфтовая', '220 В', 'сканер штрихкода', '—', 'order')
-      ]
     }
   };
 
@@ -94,7 +81,6 @@
     pipe: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A2530" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="6"/></svg>',
     corr: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A2530" aria-hidden="true"><circle cx="12" cy="12" r="9.5" stroke-width="2.4" stroke-dasharray="1.8 1.4"/><circle cx="12" cy="12" r="5.5" stroke-width="1.5"/></svg>',
     fit: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A2530" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 21v-7a10 10 0 0 1 10-10h7"/><path d="M9 21v-7a5 5 0 0 1 5-5h7"/></svg>',
-    weld: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1A2530" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="11" width="19" height="8" rx="1"/><circle cx="8" cy="15" r="2.2"/><circle cx="16" cy="15" r="2.2"/><path d="M12 11V5M9 5h6"/></svg>',
     plus: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>',
     check: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>'
   };
@@ -283,7 +269,7 @@
       } else if (!consent) {
         status.textContent = 'Отметьте согласие на обработку персональных данных.';
       } else {
-        status.textContent = 'Демо-версия: заявка не отправлена. В рабочей версии форма уходит в CRM, а КП приходит за 15 минут.';
+        status.textContent = 'Демо-версия: заявка не отправлена. В рабочей версии форма уходит в CRM, а КП приходит в рабочее время.';
       }
       status.hidden = false;
     });
